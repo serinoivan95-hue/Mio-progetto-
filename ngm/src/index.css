@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Primary palette */
+  --color-fuoco:      #C8381A;
+  --color-inchiostro: #111010;
+  --color-carta:      #F4F4F1;
+  --color-bordo:      #E3E1DC;
+  --color-grigio:     #6F6D69;
+  --color-notte:      #1C1B19;
+
+  /* Aliases kept for backward compat with untouched components */
+  --color-brand:       #C8381A;
+  --color-brand-light: #E04A2A;
+  --color-brand-dark:  #8B2010;
+  --color-bg-base:     #F4F4F1;
+  --color-surface-900: #EEEDE9;
+  --color-surface-950: #F0EFEB;
+  --color-surface-1000:#F4F4F1;
+
+  /* Typography */
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-sans:    "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #F4F4F1;
+    color: #111010;
+    font-family: var(--font-sans);
+  }
+
+  ::-webkit-scrollbar       { width: 5px; }
+  ::-webkit-scrollbar-track { background: #F4F4F1; }
+  ::-webkit-scrollbar-thumb { background: #E3E1DC; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #C8381A; }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

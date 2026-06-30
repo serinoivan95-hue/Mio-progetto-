@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Redirect SPA routes back to index
+      var l = window.location;
+      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/Mio-progetto-/' + '?/' + l.pathname.slice(1) + l.search + l.hash);
+    </script>
+  </head>
+  <body></body>
+</html>
